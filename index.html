@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function myfun(){
+            
+            var a= document.getElementById("user_mobile-no.").value;
+            
+            if(a==""){
+                document.getElementById("Message").innerHTML="**enter user mobile number";
+                return false;
+            }
+            if(isNaN(a)){
+                document.getElementById("Message").innerHTML="**Only numbers are allowed";
+                return false;
+             }
+             if(a.length<10){
+                document.getElementById("Message").innerHTML="**number must be  10 digits";
+                return false;
+             }
+             if(a.length>10){
+                document.getElementById("Message").innerHTML="**number must be  10 digits";
+                return false;
+             }
+             if((a.charAt(0)!=9) && (a.charAt(0)!=8)&& (a.charAt(0)!=7)) {
+
+                 document.getElementById("Message").innerHTML="**number must start with 9,8,and 7 digits";
+                return false;
+             }
+
+            //password validation
+            var b= document.getElementById("user_password").value;
+            var c= document.getElementById("user_psw").value;
+            if(b==""){
+                document.getElementById("Msg_pass").innerHTML="**enter user password";
+                return false;
+            }
+            if(b.length<5){
+                document.getElementById("Msg_pass").innerHTML="**Password length must be greatar than 5";
+                return false;
+             }
+             if(b.length>20){
+                document.getElementById("Msg_pass").innerHTML="**Password length must be smaller than 20";
+                return false;
+             }
+             if(b!=c){
+                document.getElementById("Msg_pass").innerHTML="**Password are not same";
+                return false;
+             }
+            }
+
+    </script>
+</head>
+<body>
+    <h2>Student's Personal Information</h2>
+    <form onsubmit="return myfun()">
+        <div class="form">
+            <div class="one">
+                Name:
+                <input type="text" class="i1">
+            </div>
+            <div class="two">
+                Branch:
+                <input type="text" class="i2">
+            </div>
+            <div class="three">
+                Department:
+                <input type="text" class="i3">
+            </div>
+            <div class="four">
+                Roll_No:
+                <input type="number" class="i4">
+            </div>
+            <div class="five">
+                Mobile No:
+                <input type="number" class="i5" id="user_mobile-no." value="">
+                <span id="Message" style="color:red"></span>
+            </div>
+            <div class="six">
+                Address:
+                <input type="text" class="i6">
+            </div>
+            <div class="seven">
+                Aggregate percentage:
+                <input type="text" class="i7">
+            </div>
+            <div class="eight">
+                Username:
+                <input type="text" class="i8">
+            </div>
+            <div class="nine">
+                Password:
+                <input type="password" class="i9" id="user_password" value="">
+                <span id="Msg_pass" style="color:red"></span>
+            </div>
+           
+            
+            <input type="submit" value="Submit">
+            
+            
+            
+        </div>
+    </form>
+    
+</body>
+</html>
