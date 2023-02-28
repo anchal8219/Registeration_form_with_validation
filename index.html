@@ -8,95 +8,97 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function myfun(){
+            //mobile_no validation
+            var a= document.getElementById("user_mobile-no.").value;
             
-            // var a= document.getElementById("user_mobile-no.").value;
+            if(a==""){
+                document.getElementById("Message").innerHTML="**enter user mobile number";
+                return false;
+            }
+            if(isNaN(a)){
+                document.getElementById("Message").innerHTML="**Only numbers are allowed";
+                return false;
+             }
+             if(a.length<10){
+                document.getElementById("Message").innerHTML="**number must be  10 digits";
+                return false;
+             }
+             if(a.length>10){
+                document.getElementById("Message").innerHTML="**number must be  10 digits";
+                return false;
+             }
+             if((a.charAt(0)!=9) && (a.charAt(0)!=8)&& (a.charAt(0)!=7)) {
+
+                 document.getElementById("Message").innerHTML="**number must start with 9,8,and 7 digits";
+                return false;
+             }
+
+            //password validation
+            var b= document.getElementById("user_password").value;
+            if(b==""){
+                document.getElementById("Msg_pass").innerHTML="**enter user password";
+                return false;
+            }
+            if(b.length<5){
+                document.getElementById("Msg_pass").innerHTML="**Password length must be greatar than 5";
+                return false;
+             }
+             if(b.length>20){
+                document.getElementById("Msg_pass").innerHTML="**Password length must be smaller than 20";
+                return false;
+             }
             
-            // if(a==""){
-            //     document.getElementById("Message").innerHTML="**enter user mobile number";
-            //     return false;
-            // }
-            // if(isNaN(a)){
-            //     document.getElementById("Message").innerHTML="**Only numbers are allowed";
-            //     return false;
-            //  }
-            //  if(a.length<10){
-            //     document.getElementById("Message").innerHTML="**number must be  10 digits";
-            //     return false;
-            //  }
-            //  if(a.length>10){
-            //     document.getElementById("Message").innerHTML="**number must be  10 digits";
-            //     return false;
-            //  }
-            //  if((a.charAt(0)!=9) && (a.charAt(0)!=8)&& (a.charAt(0)!=7)) {
+            // name validation
+            var c=document.getElementById('name').value;
+            if(c==""){
+                document.getElementById("Msg_name").innerHTML = "**Name must be filled out";
+                return false;
+            }
 
-            //      document.getElementById("Message").innerHTML="**number must start with 9,8,and 7 digits";
-            //     return false;
-            //  }
+            // branch validation
+            var correct_way1=/^[A-Za-z]+$/;
+            var d=document.getElementById('branch').value;
+            if(d==""){
+                document.getElementById("Msg_branch").innerHTML = "**Branch must be filled out";
+                return false;
+            }
+            if(d.match(correct_way1))
+                true;
+                else
+                {
+                    document.getElementById("Msg_branch").innerHTML="only alphabets are allowed";
+                return false;
+                }
+            
+            // dept validation
+            var correct_way2=/^[A-Za-z]+$/;
+            var e=document.getElementById('dept').value;
+            if(e==""){
+                document.getElementById("Msg_dept").innerHTML = "**Dept. must be filled out";
+                return false;
+            }
+            if(e.match(correct_way2))
+                true;
+                else
+                {
+                    document.getElementById("Msg_dept").innerHTML="only alphabets are allowed";
+                return false;
+                }
 
-            // //password validation
-            // var b= document.getElementById("user_password").value;
-            // if(b==""){
-            //     document.getElementById("Msg_pass").innerHTML="**enter user password";
-            //     return false;
-            // }
-            // if(b.length<5){
-            //     document.getElementById("Msg_pass").innerHTML="**Password length must be greatar than 5";
-            //     return false;
-            //  }
-            //  if(b.length>20){
-            //     document.getElementById("Msg_pass").innerHTML="**Password length must be smaller than 20";
-            //     return false;
-            //  }
-            // // name validation
-            // var c=document.getElementById('name').value;
-            // if(c==""){
-            //     document.getElementById("Msg_name").innerHTML = "**Name must be filled out";
-            //     return false;
-            // }
-
-            // // branch validation
-            // var correct_way1=/^[A-Za-z]+$/;
-            // var d=document.getElementById('branch').value;
-            // if(d==""){
-            //     document.getElementById("Msg_branch").innerHTML = "**Branch must be filled out";
-            //     return false;
-            // }
-            // if(d.match(correct_way1))
-            //     true;
-            //     else
-            //     {
-            //         document.getElementById("Msg_branch").innerHTML="only alphabets are allowed";
-            //     return false;
-            //     }
-            // // dept validation
-            // var correct_way2=/^[A-Za-z]+$/;
-            // var e=document.getElementById('dept').value;
-            // if(e==""){
-            //     document.getElementById("Msg_dept").innerHTML = "**Dept. must be filled out";
-            //     return false;
-            // }
-            // if(e.match(correct_way2))
-            //     true;
-            //     else
-            //     {
-            //         document.getElementById("Msg_dept").innerHTML="only alphabets are allowed";
-            //     return false;
-            //     }
-
-            // roll validation
-            // var correct_way3=/^[0-9]+$/; 
-            // var f=document.getElementById('roll').value;
-            // if(f==""){
-            //     document.getElementById("Msg_roll").innerHTML = "**Roll_No must be filled out";
-            //     return false;
-            // }
-            // if(f.match(correct_way3))
-            //     true;
-            //     else
-            //     {
-            //         document.getElementById("Msg_roll").innerHTML="only numbers are allowed";
-            //     return false;
-            //     }
+            //roll validation
+            var correct_way3=/^[0-9]+$/; 
+            var f=document.getElementById('roll').value;
+            if(f==""){
+                document.getElementById("Msg_roll").innerHTML = "**Roll_No must be filled out";
+                return false;
+            }
+            if(f.match(correct_way3))
+                true;
+                else
+                {
+                    document.getElementById("Msg_roll").innerHTML="only numbers are allowed";
+                return false;
+                }
             
             //address validation 
             var correct_way4=/^[A-Za-z0-9]+$/; 
