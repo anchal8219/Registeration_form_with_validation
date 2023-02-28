@@ -9,49 +9,110 @@
     <script>
         function myfun(){
             
-            var a= document.getElementById("user_mobile-no.").value;
+            // var a= document.getElementById("user_mobile-no.").value;
             
-            if(a==""){
-                document.getElementById("Message").innerHTML="**enter user mobile number";
+            // if(a==""){
+            //     document.getElementById("Message").innerHTML="**enter user mobile number";
+            //     return false;
+            // }
+            // if(isNaN(a)){
+            //     document.getElementById("Message").innerHTML="**Only numbers are allowed";
+            //     return false;
+            //  }
+            //  if(a.length<10){
+            //     document.getElementById("Message").innerHTML="**number must be  10 digits";
+            //     return false;
+            //  }
+            //  if(a.length>10){
+            //     document.getElementById("Message").innerHTML="**number must be  10 digits";
+            //     return false;
+            //  }
+            //  if((a.charAt(0)!=9) && (a.charAt(0)!=8)&& (a.charAt(0)!=7)) {
+
+            //      document.getElementById("Message").innerHTML="**number must start with 9,8,and 7 digits";
+            //     return false;
+            //  }
+
+            // //password validation
+            // var b= document.getElementById("user_password").value;
+            // if(b==""){
+            //     document.getElementById("Msg_pass").innerHTML="**enter user password";
+            //     return false;
+            // }
+            // if(b.length<5){
+            //     document.getElementById("Msg_pass").innerHTML="**Password length must be greatar than 5";
+            //     return false;
+            //  }
+            //  if(b.length>20){
+            //     document.getElementById("Msg_pass").innerHTML="**Password length must be smaller than 20";
+            //     return false;
+            //  }
+            // // name validation
+            // var c=document.getElementById('name').value;
+            // if(c==""){
+            //     document.getElementById("Msg_name").innerHTML = "**Name must be filled out";
+            //     return false;
+            // }
+
+            // // branch validation
+            // var correct_way1=/^[A-Za-z]+$/;
+            // var d=document.getElementById('branch').value;
+            // if(d==""){
+            //     document.getElementById("Msg_branch").innerHTML = "**Branch must be filled out";
+            //     return false;
+            // }
+            // if(d.match(correct_way1))
+            //     true;
+            //     else
+            //     {
+            //         document.getElementById("Msg_branch").innerHTML="only alphabets are allowed";
+            //     return false;
+            //     }
+            // // dept validation
+            // var correct_way2=/^[A-Za-z]+$/;
+            // var e=document.getElementById('dept').value;
+            // if(e==""){
+            //     document.getElementById("Msg_dept").innerHTML = "**Dept. must be filled out";
+            //     return false;
+            // }
+            // if(e.match(correct_way2))
+            //     true;
+            //     else
+            //     {
+            //         document.getElementById("Msg_dept").innerHTML="only alphabets are allowed";
+            //     return false;
+            //     }
+
+            // roll validation
+            // var correct_way3=/^[0-9]+$/; 
+            // var f=document.getElementById('roll').value;
+            // if(f==""){
+            //     document.getElementById("Msg_roll").innerHTML = "**Roll_No must be filled out";
+            //     return false;
+            // }
+            // if(f.match(correct_way3))
+            //     true;
+            //     else
+            //     {
+            //         document.getElementById("Msg_roll").innerHTML="only numbers are allowed";
+            //     return false;
+            //     }
+            
+            //address validation 
+            var correct_way4=/^[A-Za-z0-9]+$/; 
+            var g=document.getElementById('add').value;
+            if(g==""){
+                document.getElementById("Msg_add").innerHTML = "**Address must be filled out";
                 return false;
             }
-            if(isNaN(a)){
-                document.getElementById("Message").innerHTML="**Only numbers are allowed";
+            if(g.match(correct_way3))
+                true;
+                else
+                {
+                    document.getElementById("Msg_add").innerHTML="must contain alphanumeric characters are allowed";
                 return false;
-             }
-             if(a.length<10){
-                document.getElementById("Message").innerHTML="**number must be  10 digits";
-                return false;
-             }
-             if(a.length>10){
-                document.getElementById("Message").innerHTML="**number must be  10 digits";
-                return false;
-             }
-             if((a.charAt(0)!=9) && (a.charAt(0)!=8)&& (a.charAt(0)!=7)) {
+                }   
 
-                 document.getElementById("Message").innerHTML="**number must start with 9,8,and 7 digits";
-                return false;
-             }
-
-            //password validation
-            var b= document.getElementById("user_password").value;
-            var c= document.getElementById("user_psw").value;
-            if(b==""){
-                document.getElementById("Msg_pass").innerHTML="**enter user password";
-                return false;
-            }
-            if(b.length<5){
-                document.getElementById("Msg_pass").innerHTML="**Password length must be greatar than 5";
-                return false;
-             }
-             if(b.length>20){
-                document.getElementById("Msg_pass").innerHTML="**Password length must be smaller than 20";
-                return false;
-             }
-             if(b!=c){
-                document.getElementById("Msg_pass").innerHTML="**Password are not same";
-                return false;
-             }
             }
 
     </script>
@@ -62,19 +123,23 @@
         <div class="form">
             <div class="one">
                 Name:
-                <input type="text" class="i1">
+                <input type="text" class="i1" id="name" value="">
+                <span id="Msg_name" ></span>
             </div>
             <div class="two">
                 Branch:
-                <input type="text" class="i2">
+                <input type="text" class="i2" id="branch" value="">
+                <span id ="Msg_branch"></span>
             </div>
             <div class="three">
                 Department:
-                <input type="text" class="i3">
+                <input type="text" class="i3" id="dept" valu="">
+                <span id ="Msg_dept"></span>
             </div>
             <div class="four">
                 Roll_No:
-                <input type="number" class="i4">
+                <input type="text" class="i4" id="roll" value="">
+                <span id ="Msg_roll"></span>
             </div>
             <div class="five">
                 Mobile No:
@@ -83,7 +148,8 @@
             </div>
             <div class="six">
                 Address:
-                <input type="text" class="i6">
+                <input type="text" class="i6" id="add" value="">
+                <span id="Msg_add"></span>
             </div>
             <div class="seven">
                 Aggregate percentage:
